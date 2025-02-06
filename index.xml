@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elvis Polimi</title>
+    <link>https://elvispolimi.github.io/</link>
+    <description>Recent content on Elvis Polimi</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>gianluca.palermo@polimi.it (Elvis Polimi)</managingEditor>
+    <webMaster>gianluca.palermo@polimi.it (Elvis Polimi)</webMaster>
+    <lastBuildDate>Wed, 13 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://elvispolimi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analysis of a multi-layered map access on GPUs</title>
+      <link>https://elvispolimi.github.io/projects/geneo/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>https://elvispolimi.github.io/projects/geneo/</guid>
+      <description>&lt;p&gt;In our laboratory we are the main mantainers and developers of LiGen, part of the &lt;a href=&#34;https://exscalate.com/&#34;&gt;EXSCALATE&lt;/a&gt; platform.&#xA;LiGen is an extreme-scale high-throughput virtual screening application for drug discovery.&#xA;This project involves the molecular docking part of the application, which place and evaluate the interaction strength of a ligand (drug candidate) against a target (the disease protein).&#xA;It has been used for the &lt;a href=&#34;https://doi.org/10.1109/TETC.2022.3187134&#34;&gt;largest&lt;/a&gt; virtual screening up to now.&#xA;LiGen has been developed in the context of two European Project: &lt;a href=&#34;https://www.exscalate4cov.eu/&#34;&gt;Exscalate4COV&lt;/a&gt; and &lt;a href=&#34;https://www.ligateproject.eu/&#34;&gt;LIGATE&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Porting of an Holographic Application on GPUs</title>
+      <link>https://elvispolimi.github.io/projects/holographic/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>https://elvispolimi.github.io/projects/holographic/</guid>
+      <description>&lt;p&gt;In this repository is available &lt;a href=&#34;https://github.com/ppozzi/SLM-3dPointCloud/tree/master&#34;&gt;SLM-3dPointCloud&lt;/a&gt;.&#xA;SLM-3dPointCloud is a Python library for generating 3d point cloud holograms, with phase only spatial light modulators, in real time through a GPU implementation.&#xA;It is of particular interests the Random Superposition algorithm available in the application.&lt;/p&gt;&#xA;&lt;p&gt;The project consists in the porting of this application using C/C++ from python, and the optimization of CUDA kernel already available in the application.&#xA;The project involves mainly interaction with high-end NVIDIA GPUs, which we can provide access, along with free courses and certifications from NVIDIA &lt;a href=&#34;https://www.nvidia.com/en-us/training/&#34;&gt;DLI&lt;/a&gt;.&#xA;Also, the analysis and research of performance portability using other tools like SYCL or HIP can be an option.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quantum Molecular Docking</title>
+      <link>https://elvispolimi.github.io/projects/quantum/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>https://elvispolimi.github.io/projects/quantum/</guid>
+      <description>&lt;h3 id=&#34;contact-reference&#34;&gt;Contact Reference:&lt;/h3&gt;&#xA;&lt;p&gt;Accordi Gianmarco&lt;br&gt;&#xA;&lt;a href=&#34;mailto:gianmarco.accordi@polimi.it&#34;&gt;gianmarco.accordi@polimi.it&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Palermo Gianluca&lt;br&gt;&#xA;&lt;a href=&#34;mailto:gianluca.palermo@polimi.it&#34;&gt;gianluca.palermo@polimi.it&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ZSMILES</title>
+      <link>https://elvispolimi.github.io/projects/zsmiles/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>https://elvispolimi.github.io/projects/zsmiles/</guid>
+      <description>&lt;p&gt;Drug discovery C++ project&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IWOCL24</title>
+      <link>https://elvispolimi.github.io/news/iwocl24/</link>
+      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>https://elvispolimi.github.io/news/iwocl24/</guid>
+      <description>&lt;p&gt;IWOCL 24&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://elvispolimi.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>https://elvispolimi.github.io/about/</guid>
+      <description>&lt;p&gt;Elvis a research group at Politecnico di Milano, focused on High Performance Computing and Drug Discovery.&#xA;Here are members of the lab and their contact:&lt;/p&gt;&#xA;&lt;h2 id=&#34;palermo-gianluca&#34;&gt;Palermo Gianluca&lt;/h2&gt;&#xA;&lt;table&gt;&lt;tr&gt;&lt;td style=&#34;width: 100px; vertical-align: top; padding-right:10px; padding-top:6px;&#34;&gt;&#xA;&lt;img class=&#34;bio-photo&#34; src=&#34;https://elvispolimi.github.io/img/gianluca_palermo.jpg&#34; alt=&#34;Author Photo&#34;&gt;&#xA;&lt;/td&gt;&lt;td&gt;&#xA;He received his Master of Science degree in Electronic Engineering, in 2002, and the PhD degree in Computer Engineering, in 2006, from Politecnico di Milano (Italy). He is currently a Full Professor at the Department of Electronics, Information, and Bioengineering (DEIB) at the same University. Previously, he was part of the Low-Power Design Group of AST - STMicroelectronics working on Network-on-Chip architectures, and a Research Assistant at the Advanced Learning and Research Institute (ALaRI) of the Universita&#39; della Svizzera Italiana. His research interests include design methodologies and architectures for embedded and HPC systems focusing on autotuning aspects. Since 2003, he published more than 100 scientific papers in peer-reviewed conferences and journals.&#xA;&lt;h3 id=&#34;contact&#34;&gt;Contact&lt;/h3&gt;&#xA;&lt;p&gt;Email: &lt;a href=&#34;mailto:gianluca.palermo@polimi.it&#34;&gt;gianluca.palermo@polimi.it&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

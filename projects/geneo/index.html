@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>
+Analysis of a multi-layered map access on GPUs | Elvis Polimi
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name = "description" content = "">
+
+<meta name="generator" content="Hugo 0.140.2">
+
+
+<link rel="canonical" href="https://elvispolimi.github.io/projects/geneo/" >
+<link href="/sass/main.min.df07fd9ef3be6f19a5ead14591ac1543eff8aa80b33d994071cdb676e046b189.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a href="https://elvispolimi.github.io/">
+                <span class="terminal">elvis@polimi ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="https://elvispolimi.github.io/news" title="" >
+                        ~/news</a>
+                </li>
+                
+                <li>
+                    <a href="https://elvispolimi.github.io/about" title="" >
+                        ~/about</a>
+                </li>
+                
+                <li>
+                    <a href="https://elvispolimi.github.io/projects" title="" >
+                        ~/projects</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Analysis of a multi-layered map access on GPUs</h1>
+    
+    
+    <div>
+        <p>In our laboratory we are the main mantainers and developers of LiGen, part of the <a href="https://exscalate.com/">EXSCALATE</a> platform.
+LiGen is an extreme-scale high-throughput virtual screening application for drug discovery.
+This project involves the molecular docking part of the application, which place and evaluate the interaction strength of a ligand (drug candidate) against a target (the disease protein).
+It has been used for the <a href="https://doi.org/10.1109/TETC.2022.3187134">largest</a> virtual screening up to now.
+LiGen has been developed in the context of two European Project: <a href="https://www.exscalate4cov.eu/">Exscalate4COV</a> and <a href="https://www.ligateproject.eu/">LIGATE</a>.</p>
+<p>Now we are interested in the integration of new machine learning module in LiGen.
+In particular we are interested in <a href="https://arxiv.org/abs/2202.00451">GENEOnet</a>.
+GENEOnet produces a set of 3D grid which has to be evaluated for each input ligand.
+Since molecular docking is an embarrassingly parallel problem, it is an open research question which memory architecture is more efficient to access memory on external accelerator like GPUs.
+It can be extended with a work on the analysis of GPUs tensor cores usage to perform operations, like reductions, for this access pattern. Like in this <a href="https://doi.org/10.1007/978-3-031-39698-4_41">publication</a>.</p>
+<p>The project has to be done using C/C++, and it involves mainly interaction with high-end NVIDIA GPUs, which we can provide access, along with free courses and certifications from NVIDIA <a href="https://www.nvidia.com/en-us/training/">DLI</a>.
+Also, the analysis and research of performance portability using other tools like SYCL or HIP can be an option.</p>
+<h3 id="contact-reference">Contact Reference:</h3>
+<p>Accordi Gianmarco<br>
+<a href="mailto:gianmarco.accordi@polimi.it">gianmarco.accordi@polimi.it</a></p>
+<p>Palermo Gianluca<br>
+<a href="mailto:gianluca.palermo@polimi.it">gianluca.palermo@polimi.it</a></p>
+<p>Gadioli Davide<br>
+<a href="mailto:davide.gadioli@polimi.it">davide.gadioli@polimi.it</a></p>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>© 2024 Elvis Polimi</span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>
