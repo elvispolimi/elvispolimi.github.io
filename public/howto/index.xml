@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Howtos on Elvis Polimi</title>
+    <link>http://localhost:1313/howto/</link>
+    <description>Recent content in Howtos on Elvis Polimi</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <managingEditor>gianluca.palermo@polimi.it (Elvis Polimi)</managingEditor>
+    <webMaster>gianluca.palermo@polimi.it (Elvis Polimi)</webMaster>
+    <lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/howto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build your toolchain</title>
+      <link>http://localhost:1313/howto/spack/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author>
+      <guid>http://localhost:1313/howto/spack/</guid>
+      <description>&lt;p&gt;This tutorial show how it is possible to use &lt;code&gt;spack&lt;/code&gt; to build your toolchain from scratch and how to use &lt;code&gt;module&lt;/code&gt; to manage the software.&#xA;These tools operate in userspace, making them suitable to work both on your local machine and on an HPC center.&#xA;Actually on CINECA it is the preffered way of building software.&#xA;We assume a Linux operating system.&lt;/p&gt;&#xA;&lt;h3 id=&#34;start-from-spack&#34;&gt;Start from &lt;code&gt;spack&lt;/code&gt;&lt;/h3&gt;&#xA;&lt;p&gt;From a suitable working directory (e.g. &lt;code&gt;/opt&lt;/code&gt;), you need to clone and initialize spack from its repository.&#xA;Please, note that &lt;code&gt;spack&lt;/code&gt; will install all the software within the repository folder.&#xA;To grab it, you can issue the following commands in a terminal:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

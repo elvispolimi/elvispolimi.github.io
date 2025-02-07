@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>
+Build your toolchain | Elvis Polimi
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name = "description" content = "">
+
+<meta name="generator" content="Hugo 0.140.2">
+
+
+<link rel="canonical" href="http://localhost:1313/howto/spack/" >
+<link href="/sass/main.min.df07fd9ef3be6f19a5ead14591ac1543eff8aa80b33d994071cdb676e046b189.css" rel="stylesheet">
+
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">
+    <div class="header">
+        <div>
+            <a href="http://localhost:1313/">
+                <span class="terminal">elvis@polimi ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/papers" title="" >
+                        ~/science</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/projects" title="" >
+                        ~/projects</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/howto" title="" >
+                        ~/howto</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/about" title="" >
+                        ~/about</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Build your toolchain</h1>
+    
+    
+    <div>
+        <p>This tutorial show how it is possible to use <code>spack</code> to build your toolchain from scratch and how to use <code>module</code> to manage the software.
+These tools operate in userspace, making them suitable to work both on your local machine and on an HPC center.
+Actually on CINECA it is the preffered way of building software.
+We assume a Linux operating system.</p>
+<h3 id="start-from-spack">Start from <code>spack</code></h3>
+<p>From a suitable working directory (e.g. <code>/opt</code>), you need to clone and initialize spack from its repository.
+Please, note that <code>spack</code> will install all the software within the repository folder.
+To grab it, you can issue the following commands in a terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone https://github.com/spack/spack.git
+</span></span><span style="display:flex;"><span>$ source spack/share/spack/setup-env.sh
+</span></span></code></pre></div><p>Most of the <code>spack</code> package are compiled from sources.
+For this reason it is important to let it know the available system compilers, by issuing the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack compiler find
+</span></span></code></pre></div><p>The output of this command list the found compilers in the current environment</p>
+<h3 id="choose-your-compiler">Choose your compiler</h3>
+<p>It is better to build our toolchain starting from a C/C++ compiler to improve consistency and solve compatibility issues.
+For example, the system <code>gcc</code> shipped in Fedora is usually not supported by <code>cuda</code> because it is new.
+The locate the available packages, you can issue the following command <code>spack list &lt;value&gt;</code>. It will provide in output all the packages with the string &ldquo;<value>&rdquo;.</p>
+<p>It is possible to configure how <code>spack</code> will materialize, i.e. compile, the target software.
+The command <code>spack info &lt;package&gt;</code> will show all versions and variants, i.e. configure options.
+The command <code>spack spec &lt;package&gt;</code> will show how spack will materialize the package, listing all depedendencies.
+It will use symbol <code>[+]</code> to tell if the dependency will be provided by a spack package, the symbol <code>[e]</code> to tell if it uses the depedency found on the system.</p>
+<p>For example, in this tutorial we use <code>gcc</code> 13, with <code>binutils</code>, <code>grphite</code> and the languages C,C++,fortran.
+To reach this goal we issue the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack install gcc@13 binutils<span style="color:#f92672">=</span>true graphite<span style="color:#f92672">=</span>true languages<span style="color:#f92672">=</span>c,c++,fortran
+</span></span></code></pre></div><p>You can use the symbol <code>@</code> to specify the version.
+Moreover, if the variant is a bolean you can use the symbol <code>+</code> for true value and the symbol <code>~</code> for false value.
+By using this short notation the previous command becomes <code>spack install gcc@13+binutils+graphite languages=c,c++,fortran</code>.</p>
+<p>Now that we have our shiny new compiler, we need to load it and let <code>spark</code> know that it can use it compile additional stuff, by issuing the commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack load gcc@13
+</span></span><span style="display:flex;"><span>$ spack compiler find
+</span></span></code></pre></div><p>If you target gcc, you must also install its runtime, by issuing the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack install gcc-runtime %gcc@13
+</span></span></code></pre></div><p>You can specify the compiler used by using the symbol <code>%</code>.</p>
+<h3 id="build-the-dependencies">Build the dependencies</h3>
+<p>With the new compiler you can build all the libraries and additional compilers that you need.
+For example, if you want to install boost with all the components, you can issue the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack install boost@1.87.0+atomic+chrono+container+context+contract+date_time+exception+fiber+filesystem+graph+graph_parallel+icu+iostreams+json+locale+log+math+program_options+random+regex+serialization+shared+signals+system+timer+type_erasure+url+wave %gcc@13
+</span></span></code></pre></div><p>In the <code>install</code> command you can also specify the target CPU architecture.
+By default it will target the machine where <code>spack</code> is running, but you can specify it with the <code>target</code> variant, e.g. <code>taregt=haswell</code>.
+<code>spack</code> is a collection of python scripts to drive the configuration and compilation steps.
+If you need a specific compilation flag, you can customize it.
+The python file for all the packages are stored in <code>spack/var/spack/repos/builtin/packages</code>, and named <code>package.py</code>.</p>
+<p>Please note that <code>spack</code> use an hash value as naming convention, to let two different configuaration of a package coexist.
+For this reason, you can use the command <code>spack find -l</code> to show the hash.
+Then, you can find out how the package has been compiled by issuing the command <code>spack spec \&lt;hash&gt;</code>.</p>
+<p>To remove a package you can use the command <code>spack uninstall &lt;package&gt;</code>.
+However, <code>spack</code> will refuse to uninstall a package if it is a dependency of another package.
+You can use the flag <code>--dependents</code> to remove also that dependencies.</p>
+<h3 id="manage-software">Manage software</h3>
+<p>While <code>spack</code> is awesome to compile software, its interface to manage the software is slightly cumbersome.
+For this reason we use environmental modules to manage it.
+At first we need to install module using spack and then connect it with <code>spack</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack install environment-modules
+</span></span><span style="display:flex;"><span>$ spack module tcl refresh
+</span></span><span style="display:flex;"><span>$ spack config add modules:default:enable:<span style="color:#f92672">[</span>tcl<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>Then, we need to load the package and initialize the environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ spack load environment-modules
+</span></span><span style="display:flex;"><span>$ source <span style="color:#66d9ef">$(</span>spack location -i environment-modules<span style="color:#66d9ef">)</span>/init/bash
+</span></span></code></pre></div><h3 id="enabling-the-software-at-the-terminal-start-up">Enabling the software at the terminal start-up</h3>
+<p>You can append the following lines at the <code>~/.bashrc</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ source /opt/dgadioli/spack/share/spack/setup-env.sh
+</span></span><span style="display:flex;"><span>$ spack load environment-modules
+</span></span><span style="display:flex;"><span>$ source <span style="color:#66d9ef">$(</span>spack location -i environment-modules<span style="color:#66d9ef">)</span>/init/bash
+</span></span></code></pre></div><h3 id="references">References</h3>
+<p>Slides <a href="/slides/spack.pdf">spack.pdf</a> <a href="/slides/spack.md">spack.md</a></p>
+
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        <footer class="footer">
+    
+        <span>© 2024 Elvis Polimi</span>
+    
+</footer>
+    </div>
+
+</body>
+
+</html>

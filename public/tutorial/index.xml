@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Elvis Polimi</title><link>elvispolimi.github.io/tutorial/</link><description>Recent content in Tutorials on Elvis Polimi</description><generator>Hugo</generator><language>en-us</language><managingEditor>gianluca.palermo@polimi.it (Elvis Polimi)</managingEditor><webMaster>gianluca.palermo@polimi.it (Elvis Polimi)</webMaster><lastBuildDate>Thu, 06 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="elvispolimi.github.io/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Build your toolchain</title><link>elvispolimi.github.io/tutorial/spack/</link><pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate><author>gianluca.palermo@polimi.it (Elvis Polimi)</author><guid>elvispolimi.github.io/tutorial/spack/</guid><description>&lt;p>This tutorial show how it is possible to use &lt;code>spack&lt;/code> to build your toolchain from scratch and how to use &lt;code>module&lt;/code> to manage the software.
+These tools operate in userspace, making them suitable to work both on your local machine and on an HPC center.
+Actually on CINECA it is the preffered way of building software.
+We assume a Linux operating system.&lt;/p>
+&lt;h3 id="start-from-spack">Start from &lt;code>spack&lt;/code>&lt;/h3>
+&lt;p>From a suitable working directory (e.g. &lt;code>/opt&lt;/code>), you need to clone and initialize spack from its repository.
+Please, note that &lt;code>spack&lt;/code> will install all the software within the repository folder.
+To grab it, you can issue the following commands in a terminal:&lt;/p></description></item></channel></rss>
