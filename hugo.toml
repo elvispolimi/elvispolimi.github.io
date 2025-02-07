@@ -1,0 +1,48 @@
+baseURL = 'https://elvispolimi.github.io/'
+languageCode = 'en-us'
+title = 'Elvis Polimi'
+theme = 'nightfall'
+
+[menu]
+  [[menu.header]]
+    name = "science"
+    weight = 1000
+    url = "papers"
+  [[menu.header]]
+    name = "projects"
+    weight = 2000
+    url = "projects"
+  [[menu.header]]
+    name = "tutorial"
+    weight = 3000
+    url = "tutorial"
+  [[menu.header]]
+    name = "about"
+    weight = 4000
+    url = "about"
+
+[params]
+footerHtml = '© 2024 Elvis Polimi'
+user = "elvis"
+hostname = "polimi"
+  [params.author]
+    name = "Elvis Polimi"  # Website and RSS feed author
+    email = "gianluca.palermo@polimi.it"  # RSS feed email address
+
+[[params.social]]
+key = 0
+name = "github"
+url = "https://github.com/elvispolimi"
+
+[[params.social]]
+key = 1
+name = "phone"
+url = "tel:9048"
+
+[[params.social]]
+key = 3
+name = "email"
+url = "mailto:gianluca.palermo@polimi.it"
+
+[markup.goldmark.renderer]
+unsafe = true
