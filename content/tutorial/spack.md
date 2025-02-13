@@ -1,5 +1,5 @@
 +++
-title = "Build your toolchain"
+title = "How-to build your toolchain from scratch"
 aliases = ["howto"]
 date = "2025-02-06"
 author = "Elvis Lab"
