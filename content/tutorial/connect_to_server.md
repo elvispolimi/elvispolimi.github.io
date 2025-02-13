@@ -83,6 +83,8 @@ Clone a user-specific spack:
 ```bash
 $ mkdir -p /work2/<username>
 $ git clone https://github.com/spack/spack.git /work2/<username>/spack
+$ source /opt/dgadioli/spack/share/spack/setup-env.sh
+$ spack config add modules:default:enable:[tcl]
 ```
 
 Add the following lines to `~/.bashrc`:
