@@ -24,7 +24,7 @@ After being enabled to use the VPN service, you need to follow these steps:
 1. Add a vpn "Multi-protocol VPN client". **NOTE**: if you don't have that option you need to install the following packages: `network-manager-openconnect network-manager-openconnect-gnome`
 1. In the identity tab add only the following options:
     1. set `VPN Protocol` to `Palo Alto Networks GlobalProtect`
-    1. set `Gateway` to `gp-deib-saml.vpn.polimi.it`
+    1. set `Gateway` to `https://gp-deib-saml.vpn.polimi.it/gateway:prelogin-cookie`
 1. Follow direction to connet and login using the 2-Factor-Authentications
 
 ### Configure an `ssh` configuration file
